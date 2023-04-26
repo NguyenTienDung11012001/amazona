@@ -15,10 +15,20 @@ main{
   flex: 1;
 }
 
+.btn-primary{
+  background-color: #fec54c;
+  color: #000;
+  border: none;
+}
+
 .products{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.rating span{
+  color: #fec54c;
 }
 
 .product{
@@ -32,5 +42,17 @@ main{
 }
 
 .product-infor{
-  padding: 1rem;
+  padding: 1rem; 
+} 
+
+.img-large{
+  max-width: 100%;
+}
+
+.img-thumbnail{
+  height: 80px;
+} 
+
+.small-container{
+  max-width: 600px;
 }
