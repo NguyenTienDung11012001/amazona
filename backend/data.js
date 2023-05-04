@@ -1,7 +1,23 @@
+import bcrypt from 'bcryptjs';
+
 const data = {
+  users: [
+    {
+      name: 'Dung Tien',
+      email: 'admin@gmail.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: true,
+    },
+    {
+      name: 'Nguyen Van A',
+      email: 'user@gmail.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
-      _id: '1',
+      // _id: '1',
       name: 'Sirius T-shirt',
       slug: 'sirius-t-shirt',
       category: 'Shirts',
@@ -14,7 +30,7 @@ const data = {
       description: 'Inspired by: Sirius Artisan Keycap by the Artkey Team',
     },
     {
-      _id: '2',
+      // _id: '2',
       name: 'Sirius Keychain',
       slug: 'sirius-keychain',
       category: 'Keychain',
@@ -27,7 +43,7 @@ const data = {
       description: 'Inspired by: Sirius Artisan Keycap by the Artkey Team',
     },
     {
-      _id: '3',
+      // _id: '3',
       name: 'Sirius & Goodoo Deskpad',
       slug: 'sirius-goodoo-deskpad',
       category: 'Deskpad',
@@ -40,7 +56,7 @@ const data = {
       description: 'Shipping Date: 2 weeks after date of purchase',
     },
     {
-      _id: '4',
+      // _id: '4',
       name: 'Gaia Dora',
       slug: 'gaia-dora',
       category: 'Artisan',
@@ -53,7 +69,7 @@ const data = {
       description: 'high quality shirt',
     },
     {
-      _id: '5',
+      // _id: '5',
       name: 'Pot Puff',
       slug: 'pot-puff',
       category: 'Artisan',
@@ -63,6 +79,32 @@ const data = {
       brand: 'ArtkeyUniverse',
       rating: 5,
       numReviews: 10,
+      description: 'CHECK THIS OUT TO NEVER MISS A RAFFLE WIN.',
+    },
+    {
+      // _id: '5',
+      name: 'A-Team',
+      slug: 'a-team',
+      category: 'Artisan',
+      image: '/images/a-team.jpeg',
+      price: 615,
+      countInStock: 10,
+      brand: 'ArtkeyUniverse',
+      rating: 3,
+      numReviews: 20,
+      description: 'CHECK THIS OUT TO NEVER MISS A RAFFLE WIN.',
+    },
+    {
+      // _id: '5',
+      name: 'Neonize',
+      slug: 'neonize',
+      category: 'Artisan',
+      image: '/images/neonize.jpeg',
+      price: 85,
+      countInStock: 12,
+      brand: 'ArtkeyUniverse',
+      rating: 1,
+      numReviews: 22,
       description: 'CHECK THIS OUT TO NEVER MISS A RAFFLE WIN.',
     },
   ],
