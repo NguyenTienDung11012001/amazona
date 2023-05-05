@@ -20,6 +20,7 @@ import axios from 'axios';
 import SearchBox from './components/SearchBox';
 import ProductListScreen from './screens/ProductListScreen';
 import AdminRoute from './components/AdminRoute';
+import ProductEditScreen from './screens/ProductEditScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -150,12 +151,20 @@ function App() {
               <Route path="/cart" element={<CartScreen />} />
               <Route path="/search" element={<SearchScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
-              {/* Admin Routes */} 
+              {/* Admin Routes */}
               <Route
                 path="/admin/products"
                 element={
                   <AdminRoute>
                     <ProductListScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+              <Route
+                path="/admin/product/:id"
+                element={
+                  <AdminRoute>
+                    <ProductEditScreen />
                   </AdminRoute>
                 }
               ></Route>
