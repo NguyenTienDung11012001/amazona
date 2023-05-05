@@ -44,7 +44,7 @@ const data = {
     },
     {
       // _id: '3',
-      name: 'Sirius & Goodoo Deskpad',
+      name: 'Sirius & Goodoo',
       slug: 'sirius-goodoo-deskpad',
       category: 'Deskpad',
       image: '/images/sirius-goodoo-deskpad.jpeg',
@@ -82,7 +82,7 @@ const data = {
       description: 'CHECK THIS OUT TO NEVER MISS A RAFFLE WIN.',
     },
     {
-      // _id: '5',
+      // _id: '6',
       name: 'A-Team',
       slug: 'a-team',
       category: 'Artisan',
@@ -95,7 +95,7 @@ const data = {
       description: 'CHECK THIS OUT TO NEVER MISS A RAFFLE WIN.',
     },
     {
-      // _id: '5',
+      // _id: '7',
       name: 'Neonize',
       slug: 'neonize',
       category: 'Artisan',

@@ -12,10 +12,11 @@ body {
 }
 
 main{
-  flex: 1;
-}
+  flex: 1; 
+} 
  
-.btn-primary{
+.btn-primary,
+.btn-outline-primary {
   background-color: #fec54c;
   color: #000;
   border: none;
@@ -56,3 +57,34 @@ main{
 .small-container{
   max-width: 600px;
 } 
+
+/* sidebar */
+.navbar-brand {
+  font-weight: bold;
+}
+.side-navbar {
+  width: 240px;
+  height: 100%;
+  position: absolute;
+  left: -240px;
+  background-color: #121416;
+  transition: 0.5s; 
+}
+
+.site-container {
+  transition: 0.5s;
+}
+.active-cont {
+  margin-left: 240px;
+}
+.active-nav {
+  left: 0;
+}
+.nav-item,
+.nav-link{
+  color: #fff; 
+  font-size: 100%;
+}
+.text-bold{
+  font-weight: bold;
+}
