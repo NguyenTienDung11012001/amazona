@@ -57,7 +57,7 @@ function HomeScreen() {
       <Helmet>
         <title>Amazona</title>
       </Helmet>
-      <h1>Feartured Products</h1>
+      <h1 className='text-color-white'>Feartured Products</h1>
       <div className="products">
         {loading ? (
           <LoadingBox></LoadingBox>

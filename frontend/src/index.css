@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #0c0c0c;
 } 
 
 .site-container{
@@ -13,7 +14,26 @@ body {
 
 main{
   flex: 1; 
-} 
+  background-color: #0c0c0c;
+}  
+
+.text-color-white{
+  color: #fff;
+}
+
+.set-bg-pri{
+  background-color: #1d1e21;
+}
+
+.header__navbar{
+  min-height: 80px;
+}
+
+.header__button{
+  background-color: #000;
+  border: none;
+  margin-right: 10px;
+}
  
 .btn-primary,
 .btn-outline-primary {
@@ -87,4 +107,58 @@ main{
 }
 .text-bold{
   font-weight: bold;
+}
+/* Footer */
+.footer{
+  background-color: #0c0c0c;
+  color: #fff;
+}
+
+/* Product */
+.product__card{
+  background-color: #1d1e21;
+}
+
+.product__card a{
+  text-decoration: none;
+}
+
+.product__card-text{
+  font-size: 20px;
+}
+
+/* CartScreen */
+.cart-screen__list-item{
+  background-color: #1d1e21;
+}
+
+.cart-screen__list-item a{
+  text-decoration: none;
+}
+
+.cart-screen__img{ 
+  border: none;
+  padding: 0;
+}
+
+.cart-screen__cart{
+  background-color: #1d1e21;
+}
+ 
+/* Product Screen */
+.product-screen__des div{
+  background-color: #0C0C0C;
+}
+
+.product-screen__img{
+  border-radius: 6px;
+}
+/* Search Screen */
+.search-screen__nav div{
+  color: #fff;
+}
+
+.search-screen__nav div a{
+  color: #fff;
+  text-decoration: none;
 }

@@ -87,41 +87,43 @@ function ProductScreen() {
       <Row>
         <Col md={6}>
           <img
-            className="img-large"
+            className="img-large product-screen__img"
             src={product.image}
             alt={product.name}
           ></img>
         </Col>
-        <Col md={3}>
+        <Col md={3} className="product-screen__des">
           <ListGroup variant="flush">
             <ListGroup.Item>
               <Helmet>
                 <title>{product.name}</title>
               </Helmet>
-              <h1>{product.name}</h1>
-            </ListGroup.Item>
+              <h1 className="text-color-white">{product.name}</h1>
+            </ListGroup.Item> 
             <ListGroup.Item>
               <Rating rating={product.rating} numReviews={product.numReviews} />
             </ListGroup.Item>
-            <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
-            <ListGroup.Item>
+            <ListGroup.Item className="text-color-white">
+              Price: ${product.price}
+            </ListGroup.Item>
+            <ListGroup.Item className="text-color-white">
               Description:
               <p>{product.description}</p>
             </ListGroup.Item>
           </ListGroup>
         </Col>
         <Col md={3}>
-          <Card>
+          <Card className="set-bg-pri">
             <Card.Body>
               <ListGroup variant="flush">
-                <ListGroup.Item>
-                  <Row>
+                <ListGroup.Item className="set-bg-pri">
+                  <Row className="text-color-white">
                     <Col>Price:</Col>
                     <Col>${product.price}</Col>
                   </Row>
                 </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
+                <ListGroup.Item className="set-bg-pri">
+                  <Row className="text-color-white">
                     <Col>Status:</Col>
                     <Col>
                       {product.countInStock > 0 ? (
@@ -134,7 +136,7 @@ function ProductScreen() {
                 </ListGroup.Item>
 
                 {product.countInStock > 0 && (
-                  <ListGroup.Item>
+                  <ListGroup.Item className="set-bg-pri">
                     <div className="d-grid">
                       <Button onClick={addToCartHandler} variant="primary">
                         Add to Cart

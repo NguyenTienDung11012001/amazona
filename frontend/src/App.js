@@ -54,11 +54,12 @@ function App() {
       >
         <ToastContainer position="bottom-center" limit={1} />
         <header>
-          <Navbar bg="dark" variant="dark" expand="lg">
+          <Navbar bg="black" variant="dark" expand="lg" className='header__navbar'>
             <Container>
-              <Button
-                variant="dark"
+              <Button 
+                variant="dark" 
                 onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
+                className='header__button'
               >
                 <i className="fas fa-bars"></i>
               </Button>
@@ -130,7 +131,7 @@ function App() {
           </Nav>
         </div>
         <main>
-          <Container className="mt-3">
+          <Container className="mt-3 home-page">
             <Routes>
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/cart" element={<CartScreen />} />
@@ -140,7 +141,7 @@ function App() {
             </Routes>
           </Container>
         </main>
-        <footer>
+        <footer className='footer'>
           <div className="text-center">All right reserved</div>
         </footer>
       </div>

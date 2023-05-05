@@ -11,7 +11,7 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Button from 'react-bootstrap/Button';
 import Product from '../components/Product';
-import LinkContainer from 'react-router-bootstrap/LinkContainer';
+// import LinkContainer from 'react-router-bootstrap/LinkContainer';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -133,8 +133,8 @@ export default function SearchScreen() {
         <title>Search Products</title>
       </Helmet>
       <Row>
-        <Col md={3}>
-          <h3>Category</h3>
+        <Col md={3} className='search-screen__nav'>
+          <h3 className="text-color-white">Category</h3>
           <div>
             <ul>
               <li>
@@ -158,7 +158,7 @@ export default function SearchScreen() {
             </ul>
           </div>
           <div>
-            <h3>Price</h3>
+            <h3 className="text-color-white">Price</h3>
             <ul>
               <li>
                 <Link
@@ -181,7 +181,7 @@ export default function SearchScreen() {
             </ul>
           </div>
           <div>
-            <h3>Customer Review</h3>
+            <h3 className="text-color-white">Customer Review</h3>
             <ul>
               {ratings.map((r) => (
                 <li key={r.name}>
@@ -198,7 +198,7 @@ export default function SearchScreen() {
                   to={getFilterUrl({ rating: 'all' })}
                   className={rating === 'all' ? 'text-bold' : ''}
                 >
-                  <Rating caption={' & up hehe'} rating={0}></Rating>
+                  <Rating caption={' & up'} rating={0}></Rating>
                 </Link>
               </li>
             </ul>
@@ -213,7 +213,7 @@ export default function SearchScreen() {
             <>
               <Row className="justify-content-between mb-3">
                 <Col md={6}>
-                  <div>
+                  <div className='text-color-white'>
                     {countProducts === 0 ? 'No' : countProducts} Results
                     {query !== 'all' && ' : ' + query}
                     {category !== 'all' && ' : ' + category}
@@ -224,7 +224,7 @@ export default function SearchScreen() {
                     rating !== 'all' ||
                     price !== 'all' ? (
                       <Button
-                        variant="light"
+                        variant="dark"
                         onClick={() => navigate('/search')}
                       >
                         <i className="fas fa-times-circle"></i>
@@ -232,7 +232,7 @@ export default function SearchScreen() {
                     ) : null}
                   </div>
                 </Col>
-                <Col className="text-end">
+                <Col className="text-end text-color-white">
                   Sort by{' '}
                   <select
                     value={order}
@@ -243,7 +243,7 @@ export default function SearchScreen() {
                     <option value="newest">Newest Arrivals</option>
                     <option value="lowest">Price: Low to High</option>
                     <option value="highest">Price: High to Low</option>
-                    <option value="toprated">Avg. Customer Reviews</option>
+                    <option value="toprated">Top Rated</option>
                   </select>
                 </Col>
               </Row>

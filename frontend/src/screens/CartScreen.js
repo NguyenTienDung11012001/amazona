@@ -42,7 +42,7 @@ export default function CartScreen() {
       <Helmet>
         <title>Shopping Cart</title>
       </Helmet>
-      <h1>Shopping Cart</h1>
+      <h1 className="text-color-white">Shopping Cart</h1>
       <Row>
         <Col md={8}>
           {cartItems.length === 0 ? (
@@ -52,19 +52,27 @@ export default function CartScreen() {
           ) : (
             <ListGroup>
               {cartItems.map((item) => (
-                <ListGroup.Item key={item._id}>
-                  <Row className="align-items-center">
+                <ListGroup.Item
+                  key={item._id}
+                  className="cart-screen__list-item"
+                >
+                  <Row className="align-items-center text-color-white">
                     <Col md={4}>
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="img-fluid rounded img-thumbnail"
+                        className="img-fluid rounded img-thumbnail cart-screen__img"
                       ></img>{' '}
-                      <Link to={`/product/${item.slug}`}>{item.name}</Link>
+                      <Link
+                        to={`/product/${item.slug}`}
+                        className="text-color-white"
+                      >
+                        {item.name}
+                      </Link>
                     </Col>
                     <Col md={3}>
                       <Button
-                        variant="light"
+                        variant="dark"
                         onClick={() =>
                           updateCartHandler(item, item.quantity - 1)
                         }
@@ -74,7 +82,7 @@ export default function CartScreen() {
                       </Button>{' '}
                       <span>{item.quantity}</span>{' '}
                       <Button
-                        variant="light"
+                        variant="dark"
                         onClick={() =>
                           updateCartHandler(item, item.quantity + 1)
                         }
@@ -85,10 +93,10 @@ export default function CartScreen() {
                     </Col>
                     <Col md={3}>{item.price}</Col>
                     <Col md={2}>
-                      <Button 
-                        variant="light"
+                      <Button
+                        variant="dark"
                         onClick={() => removeItemHandler(item)}
-                        >
+                      >
                         <i className="fas fa-trash" />
                       </Button>
                     </Col>
@@ -99,17 +107,17 @@ export default function CartScreen() {
           )}
         </Col>
         <Col md={4}>
-          <Card>
+          <Card className="set-bg-pri">
             <Card.Body>
               <ListGroup variant="flush">
-                <ListGroup.Item>
-                  <h3>
+                <ListGroup.Item className="set-bg-pri">
+                  <h3 className="text-color-white">
                     Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}
                     items) : $
                     {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
                   </h3>
                 </ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item className="set-bg-pri">
                   <div className="d-grid">
                     <Button
                       type="button"
