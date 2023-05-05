@@ -18,6 +18,8 @@ import Button from 'react-bootstrap/Button';
 import { getError } from './utils';
 import axios from 'axios';
 import SearchBox from './components/SearchBox';
+import ProductListScreen from './screens/ProductListScreen';
+import AdminRoute from './components/AdminRoute';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -54,12 +56,17 @@ function App() {
       >
         <ToastContainer position="bottom-center" limit={1} />
         <header>
-          <Navbar bg="black" variant="dark" expand="lg" className='header__navbar'>
+          <Navbar
+            bg="black"
+            variant="dark"
+            expand="lg"
+            className="header__navbar"
+          >
             <Container>
-              <Button 
-                variant="dark" 
+              <Button
+                variant="dark"
                 onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
-                className='header__button'
+                className="header__button"
               >
                 <i className="fas fa-bars"></i>
               </Button>
@@ -101,6 +108,13 @@ function App() {
                       Sign In
                     </Link>
                   )}
+                  {userInfo && userInfo.isAdmin && (
+                    <NavDropdown title="Admin" id="admin-nav-dropdown">
+                      <LinkContainer to="/admin/products">
+                        <NavDropdown.Item>Products</NavDropdown.Item>
+                      </LinkContainer>
+                    </NavDropdown>
+                  )}
                 </Nav>
               </Navbar.Collapse>
             </Container>
@@ -113,15 +127,14 @@ function App() {
               : 'side-navbar d-flex justify-content-between flex-wrap flex-column'
           }
         >
-          <Nav className="flex-column text-white w-100 p-2">
-            <Nav.Item>
+          <Nav className="flex-column text-white w-100 p-2 mt-2">
+            <Nav.Item className="sidebar-title">
               <strong>Categories</strong>
             </Nav.Item>
             {categories.map((category) => (
               <Nav.Item key={category}>
                 <LinkContainer
-                  // to={`/search?category=${category}`}
-                  to={{ pathname: '/search', search: `?category=${category}` }} 
+                  to={{ pathname: '/search', search: `?category=${category}` }}
                   onClick={() => setSidebarIsOpen(false)}
                 >
                   <Nav.Link>{category}</Nav.Link>
@@ -137,11 +150,20 @@ function App() {
               <Route path="/cart" element={<CartScreen />} />
               <Route path="/search" element={<SearchScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
+              {/* Admin Routes */} 
+              <Route
+                path="/admin/products"
+                element={
+                  <AdminRoute>
+                    <ProductListScreen />
+                  </AdminRoute>
+                }
+              ></Route>
               <Route path="/" element={<HomeScreen />} />
             </Routes>
           </Container>
         </main>
-        <footer className='footer'>
+        <footer className="footer">
           <div className="text-center">All right reserved</div>
         </footer>
       </div>

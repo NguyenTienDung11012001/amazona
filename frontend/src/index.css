@@ -79,6 +79,9 @@ main{
 } 
 
 /* sidebar */
+.sidebar-title strong{
+  font-size: 28px;
+}
 .navbar-brand {
   font-weight: bold;
 }
@@ -107,6 +110,7 @@ main{
 }
 .text-bold{
   font-weight: bold;
+  font-size: 130%;
 }
 /* Footer */
 .footer{
